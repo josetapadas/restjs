@@ -2,7 +2,7 @@
 var mongoDB = require('mongodb');
 
 var mongo_server = new mongoDB.Server('localhost', 27017, {auto_reconnect: true, journal: true});
-var mongo_db = new mongoDB.Db('todojsdb', mongo_server, {journal:false,fsync:false,safe: false});
+var mongo_db = new mongoDB.Db('todojsdb', mongo_server, {safe: true});
 var mongo_BSON = mongoDB.BSONPure;
 
 mongo_db.open(function(e, db){
@@ -45,7 +45,7 @@ exports.updateItem = function(req, res) {
 			if(e) {
 				res.send({error:'error-updating'});
 			} else {
-				res.send(item);	
+				res.send(result[0]);	
 			}
 		});
 	});	
@@ -72,10 +72,11 @@ exports.addItem = function (req, res) {
 	mongo_db.collection('todos', function(e, collection) {
 		collection.insert(item, [{safe:true}], function(e, result) {
 			if(e) {
+				console.log(e);
 				res.send({error:'error-inserting'});
 			} else {
 				console.log('[+] Inserted: ' + JSON.stringify(result[0]));
-				res.send[result[0]];
+				res.send(result[0]);
 			}
 		});
 	});
