@@ -1,8 +1,8 @@
 // Database configuration
 var mongoDB = require('mongodb');
 
-var mongo_server = new mongoDB.Server('localhost', 27017, {auto_reconnect: true});
-var mongo_db = new mongoDB.Db('todojsdb', mongo_server);
+var mongo_server = new mongoDB.Server('localhost', 27017, {auto_reconnect: true, journal: true});
+var mongo_db = new mongoDB.Db('todojsdb', mongo_server, {journal:false,fsync:false,safe: false});
 var mongo_BSON = mongoDB.BSONPure;
 
 mongo_db.open(function(e, db){
