@@ -45,7 +45,7 @@ exports.updateItem = function(req, res) {
 			if(e) {
 				res.send({error:'error-updating'});
 			} else {
-				res.send(result[0]);	
+				res.send(item);	
 			}
 		});
 	});	
