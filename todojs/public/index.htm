@@ -8,5 +8,16 @@
         <script src="./static/underscore.js"></script>
         <script src="./static/backbone.js"></script>
         <script src="./static/todo.js"></script>
+    
+        <div id="todolist"></div>
+
+        <script type="text/javascript">
+            var todo_collection = new TodoList();
+            var todo_list_view = new TodoListView({collection:todo_collection});
+            todo_list_view.render();
+            $('#todolist').append(todo_list_view.el);
+
+            todo_collection.fetch();
+        </script>
     </body>
 </html>
