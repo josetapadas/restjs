@@ -5,6 +5,11 @@ var app = express();
 app.configure(function () {
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
+    app.use(express.static(__dirname + '/public'));
+});
+
+app.get("/", function(req, res) {
+  res.redirect("/index.htm");
 });
 
 // todojs API
