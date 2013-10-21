@@ -1,6 +1,6 @@
-# todo.js RESTfull API
+# todo.js RESTful API
 
-A REST API for a simple TODO list fully in javascript. Dependencies:
+A REST API boilerplate fully in javascript. Dependencies:
 + NodeJS as a server
 + ExpressJS as a framework
 + MongoDB as a permanent storage
@@ -8,16 +8,16 @@ A REST API for a simple TODO list fully in javascript. Dependencies:
 ### API Calls
 
 + *GET /todojs*
-  Retreives all todo items
+  Retreives all items
 
 + *GET /todojs/id*
-  Retreives todo item with *id*
+  Retreives item with *id*
 
 + *POST /todojs*
   Adds a new todo item
 
 + *PUT /todojs/id*
-  Updates todo item with *id*
+  Updates item with *id*
 
 + *DELETE /todojs/id*
-  Deletes todo item with *id*
+  Deletes item with *id*
