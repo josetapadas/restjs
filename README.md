@@ -1,4 +1,4 @@
-# todo.js RESTful API
+# rest.js RESTful API boilerplate
 
 A REST API boilerplate fully in javascript. Dependencies:
 + NodeJS as a server
